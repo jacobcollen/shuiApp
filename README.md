@@ -14,15 +14,15 @@ Content-Type: application/json
 Fetch all messages.
 
 **URL:** GET  
-`https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages`
+`https://g9dggmrcpc.execute-api.eu-north-1.amazonaws.com/messages`
 
 _Response:_
 ```json
 {
   "messages": [
     {
-      "username": "testuser",
-      "text": "Hello, World!",
+      "username": "John Doe",
+      "text": "plantbased over meat, ok!",
       "createdAt": "2024-09-25T01:30:44.141Z"
     }
   ]
@@ -33,13 +33,13 @@ _Response:_
 Create a new message (requires `username` and `text`).  
 
 **URL:** POST  
-`https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages`  
+`https://g9dggmrcpc.execute-api.eu-north-1.amazonaws.com/messages`  
 
 _Example Request Body:_
 ```json
 {
-"username": "testuser",
-"text": "Hello, World!"
+"username": "John Doe",
+"text": "plantbased over meat, ok!"
 }
 ```
 _Response:_
@@ -48,8 +48,8 @@ _Response:_
   "newMessage": {
     "pk": "MESSAGE",
     "sk": "xxxxxx",
-    "username": "testuser",
-    "text": "Hello, World!",
+    "username": "John Doe",
+    "text": "plantbased over meat, ok!",
     "createdAt": "2024-09-25T01:30:44.141Z"
   }
 }
@@ -59,7 +59,7 @@ _Response:_
 Update an message (requires `id` and `text`).  
 
 **URL:** PUT  
-`https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages/{id}`  
+`https://g9dggmrcpc.execute-api.eu-north-1.amazonaws.com/messages/{id}`  
 
 _Example Request Body:_
 ```json
@@ -73,7 +73,7 @@ _Response:_
   "updatedMessage": {
     "pk": "MESSAGE",
     "sk": "xxxxxx",
-    "username": "testuser",
+    "username": "John Doe",
     "text": "Updated text",
     "createdAt": "2024-09-25T01:30:44.141Z",
     "updatedAt": "2024-09-25T01:40:00.000Z"
@@ -85,7 +85,7 @@ _Response:_
 Delete a message (requires `id`).
   
 **URL:** DELETE  
-`https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages/{id}`  
+`https://g9dggmrcpc.execute-api.eu-north-1.amazonaws.com/messages/{id}`  
 
 _Response:_  
 `204 No Content` if delete is successfull.
@@ -105,8 +105,8 @@ _Response:_
     {
       "pk": "MESSAGE",
       "sk": "xxxxxx",
-      "username": "testuser",
-      "text": "Hello, World!",
+      "username": "John Doe",
+      "text": "plantbased over meat, ok!",
       "createdAt": "2024-09-25T01:30:44.141Z"
     }
   ]
@@ -126,8 +126,8 @@ _Response:_
     {
       "pk": "MESSAGE",
       "sk": "xxxxxx",
-      "username": "testuser",
-      "text": "Hello, World!",
+      "username": "John Doe",
+      "text": "plantbased over meat, ok!",
       "createdAt": "2024-09-25T01:30:44.141Z"
     }
   ]
