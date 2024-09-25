@@ -6,12 +6,12 @@ Built with AWS Lambda, DynamoDB and Node.js using ES6 modules.
 ## API Endpoints
 
 ### Headers
-- Content-Type: application/json
+Content-Type: application/json
 
 ## User endpoints:
 
 ### GET _/messages_
-- Fetch all messages.
+Fetch all messages.
 
 **URL:** GET  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages`
@@ -30,7 +30,7 @@ _Response:_
 ```
 
 ### POST ***/messages***  
-- Create a new message (requires `username` and `text`).  
+Create a new message (requires `username` and `text`).  
 
 **URL:** POST  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages`  
@@ -56,7 +56,7 @@ _Response:_
 ```
 
 ### PUT ***/messages/{id}***  
--Update an message (requires `id` and `text`).  
+Update an message (requires `id` and `text`).  
 
 **URL:** PUT  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages/{id}`  
@@ -82,7 +82,7 @@ _Response:_
 ```
 
 ### DELETE ***/messages/{id}***  
-- Delete a message (requires `id`).
+Delete a message (requires `id`).
   
 **URL:** DELETE  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/messages/{id}`  
@@ -93,7 +93,7 @@ _Response:_
 ## Admin endpoints:
 
 ### GET ****/admin/messages****  
-- Fetch all messages.
+Fetch all messages.
   
 **URL:** GET  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/admin/messages`  
@@ -114,7 +114,7 @@ _Response:_
 ```
 
 ### GET ***/admin/messages/{username}***  
-- Fetch messages by username
+Fetch messages by username
   
 **URL:** GET  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/admin/messages/{username}`  
@@ -135,7 +135,7 @@ _Response:_
 ```
   
 ### DELETE ***/admin/messages/{id}***  
-- Delete any message  
+Delete any message  
 
 **URL:**  DELETE  
 `https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/admin/messages/{id}`  
