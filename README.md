@@ -21,7 +21,7 @@ _Response:_
 {
   "messages": [
     {
-      "username": "John Doe",
+      "name": "John Doe",
       "text": "plantbased over meat, ok!",
       "createdAt": "2024-09-25T01:30:44.141Z"
     }
@@ -30,7 +30,7 @@ _Response:_
 ```
 
 ### POST ***/messages***  
-Create a new message (requires `username` and `text`).  
+Create a new message (requires `name` and `text`).  
 
 **URL:** POST  
 `https://g9dggmrcpc.execute-api.eu-north-1.amazonaws.com/messages`  
@@ -38,7 +38,7 @@ Create a new message (requires `username` and `text`).
 _Example Request Body:_
 ```json
 {
-"username": "John Doe",
+"name": "John Doe",
 "text": "plantbased over meat, ok!"
 }
 ```
@@ -48,7 +48,7 @@ _Response:_
   "newMessage": {
     "pk": "MESSAGE",
     "sk": "xxxxxx",
-    "username": "John Doe",
+    "name": "John Doe",
     "text": "plantbased over meat, ok!",
     "createdAt": "2024-09-25T01:30:44.141Z"
   }
@@ -73,7 +73,7 @@ _Response:_
   "updatedMessage": {
     "pk": "MESSAGE",
     "sk": "xxxxxx",
-    "username": "John Doe",
+    "name": "John Doe",
     "text": "Updated text",
     "createdAt": "2024-09-25T01:30:44.141Z",
     "updatedAt": "2024-09-25T01:40:00.000Z"
@@ -105,7 +105,7 @@ _Response:_
     {
       "pk": "MESSAGE",
       "sk": "xxxxxx",
-      "username": "John Doe",
+      "name": "John Doe",
       "text": "plantbased over meat, ok!",
       "createdAt": "2024-09-25T01:30:44.141Z"
     }
@@ -113,11 +113,11 @@ _Response:_
 }
 ```
 
-### GET ***/admin/messages/{username}***  
-Fetch messages by username
+### GET ***/admin/messages/{name}***  
+Fetch messages by name
   
 **URL:** GET  
-`https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/admin/messages/{username}`  
+`https://k2lrugk7kg.execute-api.eu-north-1.amazonaws.com/admin/messages/{name}`  
 
 _Response:_
 ```json
@@ -126,7 +126,7 @@ _Response:_
     {
       "pk": "MESSAGE",
       "sk": "xxxxxx",
-      "username": "John Doe",
+      "name": "John Doe",
       "text": "plantbased over meat, ok!",
       "createdAt": "2024-09-25T01:30:44.141Z"
     }
