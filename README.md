@@ -65,7 +65,6 @@ Retrieve a specific message by its ID.
   "error": "Message not found"
 }
 ```
-
 <br>
 
 ### 3. Create a Message
@@ -102,7 +101,6 @@ Create a new message.
   "error": "Both username and message text are required"
 }
 ```
-
 <br>
 
 ### 4. Update a Message
@@ -152,7 +150,6 @@ Update an existing message by its ID. Only the message owner (the user who creat
   "error": "Both username and message text are required"
 }
 ```
-
 <br>
 
 ### 5. Delete a Message
@@ -195,7 +192,6 @@ Delete a specific message by its ID.
   "error": "Message not found"
 }
 ```
-
 <br>
 
 ### Error Handling
@@ -205,7 +201,6 @@ Delete a specific message by its ID.
 - **403 Forbidden** – User is not allowed to update or delete the message.
 - **404 Not Found** – Resource not found.
 - **500 Internal Server Error** – An unexpected error occurred.
-
 
 ---
 
