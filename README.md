@@ -4,22 +4,20 @@ Shui Message Board is a browser-based fullstack mini application that allows use
 
 ## Development
 
-- **Node.js (LTS)** – Required for running the backend services and building the frontend.
-- **Serverless Framework** – Used for managing AWS infrastructure and deploying the backend.
-- **AWS CLI** – Configured with the appropriate IAM permissions to deploy to AWS.
+- **Node.js (LTS)** – Required for running backend services and building the frontend.
+- **Serverless Framework** – Manages AWS infrastructure and deploys the backend.
+- **AWS CLI** – Configured with appropriate IAM permissions.
 
 ### Frontend
-- **React** – Framework used to build the frontend.
-- **AWS S3** – Hosting the frontend as a static website.
-- **Axios** – Handles HTTP requests to the backend API.
-- **Vite** – Build tool for compiling and bundling.
-
+- **React + Vite** – For building, compiling, and bundling the frontend.
+- **AWS S3** – Hosts the frontend as a static website.
+- **Axios** – Handles HTTP requests to the backend.
 
 ### Backend
-- **AWS Lambda** – Serverless compute service for handling API requests.
+- **AWS Lambda** – Handles API requests in a serverless environment.
 - **DynamoDB** – NoSQL database for storing messages.
-- **API Gateway** – Manages API endpoints for interacting with the backend.
-- **Serverless Framework** – Used to deploy and manage backend services.
+- **API Gateway** – Manages API endpoints for backend interaction.
+- **Serverless Framework** – Deploys and manage backend services.
 
 ## Base URL
 
