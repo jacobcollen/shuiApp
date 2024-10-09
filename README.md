@@ -1,12 +1,31 @@
-# Shui Message Board API
+# Shui Message Board Fullstack Mini Application
 
-This API allows users to create, read, update, and delete messages on a browser baset bulletin board. It is built using AWS Lambda, DynamoDB, and API Gateway, and is deployed using the Serverless Framework.
+Shui Message Board is a browser-based fullstack mini application that allows users to read other people’s messages from a feed, as well as create, update, and delete their own messages. The application is designed to be simple yet efficient, using modern web development tools and cloud technologies.
+
+## Development
+
+- **Node.js (LTS)** – Required for running the backend services and building the frontend.
+- **Serverless Framework** – Used for managing AWS infrastructure and deploying the backend.
+- **AWS CLI** – Configured with the appropriate IAM permissions to deploy to AWS.
+
+### Frontend:
+- **React** – Framework used to build the frontend.
+- **AWS S3** – Hosting the frontend as a static website.
+- **Axios** – Handles HTTP requests to the backend API.
+- **Vite** – Build tool for compiling and bundling the React app.
+- **CSS Modules** – Used for scoped styling within each component.
+
+### Backend:
+- **AWS Lambda** – Serverless compute service for handling API requests.
+- **DynamoDB** – NoSQL database for storing messages.
+- **API Gateway** – Manages API endpoints for interacting with the backend.
+- **Serverless Framework** – Used to deploy and manage backend services.
 
 ## Base URL
 
 `https://4a1acwbxsa.execute-api.eu-north-1.amazonaws.com/`
 
-## Endpoints
+## API Endpoints
 
 ### 1. Get All Messages
 
@@ -201,6 +220,7 @@ Delete a specific message by its ID.
 - **403 Forbidden** – User is not allowed to update or delete the message.
 - **404 Not Found** – Resource not found.
 - **500 Internal Server Error** – An unexpected error occurred.
+<br>
 
 ---
 
