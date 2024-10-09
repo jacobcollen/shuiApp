@@ -1,0 +1,82 @@
+service: shui-backend
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  stage: prod
+  deploymentMethod: direct
+  iam:
+    role: arn:aws:iam::354918384324:role/LamdaDynamoDbRole
+  environment:
+    MESSAGES_TABLE: MessagesTable
+
+functions:
+  getMessages:
+    handler: functions/GetMessages/index.getMessages
+    events:
+      - http:
+          path: /messages
+          method: get
+          cors: true
+
+  getMessage:
+    handler: functions/GetMessage/index.getMessage
+    events:
+      - http:
+          path: /messages/{id}
+          method: get
+          cors: true
+
+  postMessage:
+    handler: functions/PostMessage/index.postMessage
+    events:
+      - http:
+          path: /messages
+          method: post
+          cors: true
+
+  updateMessage:
+    handler: functions/UpdateMessage/index.updateMessage
+    events:
+      - http:
+          path: /messages/{id}
+          method: put
+          cors: true
+
+  deleteMessage:
+    handler: functions/DeleteMessage/index.deleteMessage
+    events:
+      - http:
+          path: /messages/{id}
+          method: delete
+          cors: true
+
+resources:
+  Resources:
+    MessagesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.MESSAGES_TABLE}
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+          - AttributeName: sk
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: S
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+          - AttributeName: sk
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
+        GlobalSecondaryIndexes:
+          - IndexName: CreatedAtIndex
+            KeySchema:
+              - AttributeName: pk
+                KeyType: HASH
+              - AttributeName: createdAt
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL

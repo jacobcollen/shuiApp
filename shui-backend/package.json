@@ -1,0 +1,23 @@
+{
+  "name": "shui-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Shui app",
+  "type": "module",
+  "scripts": {
+    "start": "node services/index.mjs",
+    "dev": "node services/index.mjs",
+    "deploy": "serverless deploy",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.667.0",
+    "@aws-sdk/lib-dynamodb": "^3.667.0",
+    "uuid": "^10.0.0",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0",
+    "serverless": "^4.4.4",
+    "eslint": "^9.12.0"
+  }
+}

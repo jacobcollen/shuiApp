@@ -1,0 +1,36 @@
+.message-form {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.message-form__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.message-form__textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.message-form__button {
+    background-color: #1da1f2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
