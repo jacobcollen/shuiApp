@@ -10,9 +10,9 @@ Shui Message Board is a browser-based fullstack mini application that allows use
 
 ### Frontend
 - **React** – Framework used to build the frontend.
-- **Vite** – Build tool for compiling and bundling.
 - **AWS S3** – Hosting the frontend as a static website.
 - **Axios** – Handles HTTP requests to the backend API.
+- **Vite** – Build tool for compiling and bundling.
 
 
 ### Backend
