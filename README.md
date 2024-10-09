@@ -8,14 +8,14 @@ Shui Message Board is a browser-based fullstack mini application that allows use
 - **Serverless Framework** – Used for managing AWS infrastructure and deploying the backend.
 - **AWS CLI** – Configured with the appropriate IAM permissions to deploy to AWS.
 
-### Frontend:
+### Frontend
 - **React** – Framework used to build the frontend.
+- **Vite** – Build tool for compiling and bundling.
 - **AWS S3** – Hosting the frontend as a static website.
 - **Axios** – Handles HTTP requests to the backend API.
-- **Vite** – Build tool for compiling and bundling the React app.
-- **CSS Modules** – Used for scoped styling within each component.
 
-### Backend:
+
+### Backend
 - **AWS Lambda** – Serverless compute service for handling API requests.
 - **DynamoDB** – NoSQL database for storing messages.
 - **API Gateway** – Manages API endpoints for interacting with the backend.
@@ -211,22 +211,10 @@ Delete a specific message by its ID.
   "error": "Message not found"
 }
 ```
-<br>
 
-### Error Handling
+## Error Handling
 #### Common error responses include:
-
 - **400 Bad Request** – Invalid input or missing fields.
 - **403 Forbidden** – User is not allowed to update or delete the message.
 - **404 Not Found** – Resource not found.
 - **500 Internal Server Error** – An unexpected error occurred.
-<br>
-
----
-
-## Development
-#### Prerequisites
-
-- Node.js ES modules (latest LTS version)
-- Serverless Framework
-- AWS CLI configured with appropriate IAM permissions
