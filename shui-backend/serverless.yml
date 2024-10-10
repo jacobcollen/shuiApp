@@ -80,3 +80,4 @@ resources:
                 KeyType: RANGE
             Projection:
               ProjectionType: ALL
+              
