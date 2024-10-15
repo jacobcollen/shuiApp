@@ -102,7 +102,7 @@ Update an existing message by its ID. Only the message owner (the user who creat
 #### Parameters
 - **id** – (path parameter) – The ID of the message.
 #### Headers
-- **useerid-x** (header) – Get User ID from Localstorage to verify ownership.
+- **x-username** (header) – Get User ID from Localstorage to verify ownership.
 #### Request Body
 ```json
 {
@@ -142,7 +142,7 @@ Delete a specific message by its ID.
 #### Parameters
 - **id** – (path parameter) – The ID of the message.
 #### Headers
-- **useerid-x** (header) – Get User ID from Localstorage to verify ownership.
+- **x-username** (header) – Get User ID from Localstorage to verify ownership.
 #### Response
 - **200 OK** – Message deleted successfully.
 ```json
