@@ -5,36 +5,38 @@ import { response, handleError } from "../../responses/index.mjs";
 const TABLE_NAME = process.env.MESSAGES_TABLE;
 
 export async function getMessage(event) {
-  const { id } = event.pathParameters ?? {};
+	const { id } = event.pathParameters ?? {};
 
-  if (!id) {
-    console.error("ID is required but not provided.");
-    return response(400, { error: "ID is required" });
-  }
+	if (!id) {
+		console.error("ID is required but not provided.");
+		return response(400, { error: "ID is required" });
+	}
 
-  try {
-    const { Item } = await getDynamoDb().send(
-      new GetCommand({
-        TableName: TABLE_NAME,
-        Key: { pk: "MSG", sk: id },
-      })
-    );
+	try {
+		const dynamoDb = await getDynamoDb();
+		const { Item } = await dynamoDb.send(
+			new GetCommand({
+				TableName: TABLE_NAME,
+				Key: { pk: "MSG", sk: id },
+			})
+		);
 
-    if (!Item) {
-      console.log(`Message with ID ${id} not found.`);
-      return response(404, { error: "Message not found" });
-    }
+		if (!Item) {
+			console.log(`Message with ID ${id} not found.`);
+			return response(404, { error: "Message not found" });
+		}
 
-    return response(200, {
-      message: {
-        username: Item.username,
-        messageText: Item.messageText,
-        createdAt: Item.createdAt,
-        updatedAt: Item.updatedAt || null,
-      },
-    });
-  } catch (error) {
-    console.error(`Error retrieving message with ID ${id}:`, error);
-    return handleError("retrieving message", error);
-  }
+		return response(200, {
+			message: {
+				id: Item.sk,
+				username: Item.username,
+				messageText: Item.messageText,
+				createdAt: Item.createdAt,
+				updatedAt: Item.updatedAt || null,
+			},
+		});
+	} catch (error) {
+		console.error(`Error retrieving message with ID ${id}:`, error);
+		return handleError("retrieving message", error);
+	}
 }

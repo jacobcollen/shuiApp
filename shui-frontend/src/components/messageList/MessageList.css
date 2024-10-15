@@ -1,30 +1,9 @@
 .message-list {
-    max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    max-width: 28rem;
+    padding: 1rem;
 }
 
-.message-list__item {
-    border-bottom: 1px solid #e1e8ed;
-    padding: 10px 0;
-}
-
-.message-list__item--last {
-    border-bottom: none;
-}
-
-.message-list__username {
-    font-weight: bold;
-    color: #1da1f2;
-}
-
-.message-list__text {
-    margin-top: 5px;
-    color: #14171a;
-}
-
-.message-list__date {
-    font-size: 0.9rem;
-    color: #657786;
-    margin-top: 3px;
+.message-list .message-item+.message-item {
+    margin-top: 1rem;
 }

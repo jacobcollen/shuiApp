@@ -1,0 +1,60 @@
+.message-item {
+    border: 2px solid #1c1c1c;
+    padding: 1rem;
+    border-radius: .3rem;
+    transition: background-color 0.3s ease;
+}
+
+.message-item:hover {
+    background-color: #091017;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.username {
+    font-weight: bold;
+    color: #737373;
+}
+
+.created-at {
+    font-size: 12px;
+    color: #737373;
+}
+
+.message-text {
+    color: #a9a9a9;
+    margin-top: 3rem;
+
+}
+
+.message-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #1da1f2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.edit-btn:hover {
+    color: #0d95e8;
+}
+
+.delete-btn:hover {
+    color: #d9534f;
+}
+
+.action-icon {
+    margin-right: 5px;
+}

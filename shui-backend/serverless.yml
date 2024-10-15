@@ -18,7 +18,11 @@ functions:
       - http:
           path: /messages
           method: get
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - x-username
 
   getMessage:
     handler: functions/GetMessage/index.getMessage
@@ -26,7 +30,11 @@ functions:
       - http:
           path: /messages/{id}
           method: get
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - x-username
 
   postMessage:
     handler: functions/PostMessage/index.postMessage
@@ -34,7 +42,11 @@ functions:
       - http:
           path: /messages
           method: post
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - x-username
 
   updateMessage:
     handler: functions/UpdateMessage/index.updateMessage
@@ -42,7 +54,11 @@ functions:
       - http:
           path: /messages/{id}
           method: put
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - x-username
 
   deleteMessage:
     handler: functions/DeleteMessage/index.deleteMessage
@@ -50,7 +66,11 @@ functions:
       - http:
           path: /messages/{id}
           method: delete
-          cors: true
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - x-username
 
 resources:
   Resources:
@@ -80,4 +100,3 @@ resources:
                 KeyType: RANGE
             Projection:
               ProjectionType: ALL
-              

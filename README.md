@@ -102,12 +102,11 @@ Update an existing message by its ID. Only the message owner (the user who creat
 #### Parameters
 - **id** – (path parameter) – The ID of the message.
 #### Headers
-- **username-x** (header) – The username of the user attempting to delete the message. This must match the original message creator’s username.
+- **useerid-x** (header) – Get User ID from Localstorage to verify ownership.
 #### Request Body
 ```json
 {
-  "username": "JohnDoe",  // Username must match the original creator's username
-  "messageText": "Updated message text"
+  "messageText": "Uppdaterad text i meddelandet"
 }
 ```
 #### Response
@@ -117,13 +116,13 @@ Update an existing message by its ID. Only the message owner (the user who creat
   "updatedMessage": {
     "pk": "MSG",
     "sk": "123abc",
-    "username": "JohnDoe",  // Cannot be changed
+    "username": "JohnDoe",
     "messageText": "Updated message text",
     "updatedAt": "2024-10-06T13:00:00.000Z"
   }
 }
 ```
-- **403 Forbidden** – User is not allowed to update the message (if they try to modify someone else’s message).
+- **403 Forbidden** – User is not allowed to update the message.
  ```json
 {
   "error": "You are not allowed to update this message."
@@ -143,13 +142,7 @@ Delete a specific message by its ID.
 #### Parameters
 - **id** – (path parameter) – The ID of the message.
 #### Headers
-- **username-x** (header) – The username of the user attempting to delete the message. This must match the original message creator’s username.
-#### Request Body
-```json
-{
-  "username": "JohnDoe"  // Username must match the original creator's username
-}
-```
+- **useerid-x** (header) – Get User ID from Localstorage to verify ownership.
 #### Response
 - **200 OK** – Message deleted successfully.
 ```json

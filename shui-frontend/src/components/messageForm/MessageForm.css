@@ -1,36 +1,50 @@
-.message-form {
+.message-form-modal {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #1da1f2;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.message-form__input {
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #e1e8ed;
-    border-radius: 4px;
-    margin-top: 10px;
+    height: 100%;
+    background-color: rgba(6, 10, 15, 0.611);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.message-form__textarea {
+.message-form-modal form {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #e1e8ed;
-    border-radius: 4px;
-    margin-top: 10px;
+    max-width: 26rem;
+    background-color: #08080d;
+    padding: 1rem;
+    border: 2px solid rgba(63, 63, 63, 0.526);
+    border-radius: .6rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.message-form__button {
-    background-color: #1da1f2;
-    color: white;
+.message-form-modal input[type="text"],
+.message-form-modal textarea {
+    width: 90%;
     padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border: 1px solid #171a1e;
+    border-radius: .2rem;
+    background-color: #0a0f14;
+    color: #e1e8ed;
+    font-family: inherit;
+}
+
+.message-form-modal input[type="text"]::placeholder,
+.message-form-modal textarea::placeholder {
+    color: #a4a4a4;
+
+}
+
+.message-form-modal textarea {
+    width: 95%;
+    height: 7rem;
+    resize: vertical;
+}
+
+.form-edit-btn {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }

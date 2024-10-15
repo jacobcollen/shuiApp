@@ -1,44 +1,51 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import MessageList from "./components/messageList/MessageList";
-import MessageForm from "./components/messageForm/MessageForm";
-import Button from "./components/button/button";
-import { fetchMessages } from "../api";
+import PostMessageBtn from "./components/postMessageBtn/PostMessageBtn";
+import { getMessages } from "./api";
 import "./index.css";
 
-const App = () => {
-  const [messages, setMessages] = useState([]);
-  const [showForm, setShowForm] = useState(false);
-  const [username, setUsername] = useState("");
+function App() {
+	const [messages, setMessages] = useState([]);
+	const [currentUser, setCurrentUser] = useState(
+		localStorage.getItem("username") || ""
+	);
 
-  // Hämta och uppdatera meddelanden
-  const fetchAndSetMessages = async () => {
-    const fetchedMessages = await fetchMessages();
-    setMessages(fetchedMessages);
-  };
+	useEffect(() => {
+		fetchMessages();
+	}, []);
 
-  useEffect(() => {
-    fetchAndSetMessages();
-  }, []);
+	const fetchMessages = async () => {
+		try {
+			const data = await getMessages();
+			if (data.messages) {
+				setMessages(data.messages);
+			} else {
+				console.error("Misslyckades med att ladda meddelanden:", data);
+			}
+		} catch (error) {
+			console.error("Fel vid hämtning av meddelanden:", error);
+		}
+	};
 
-  // Hantera knapptryck för nytt inlägg
-  const handleNewPostClick = () => {
-    setShowForm(!showForm);
-  };
+	const handleSetUser = (username) => {
+		setCurrentUser(username);
+		localStorage.setItem("username", username);
+	};
 
-  return (
-    <div className="app">
-      {/* Visa lista med meddelanden */}
-      <MessageList messages={messages} username={username} />
-
-      {/* Visa formuläret om showForm är true */}
-      {showForm && (
-        <MessageForm fetchMessages={fetchAndSetMessages} username={username} />
-      )}
-
-      {/* Knapp för att lägga till nytt inlägg */}
-      <Button onClick={handleNewPostClick} />
-    </div>
-  );
-};
+	return (
+		<div className="app">
+			<MessageList
+				messages={messages}
+				currentUser={currentUser}
+				refreshMessages={fetchMessages}
+			/>
+			<PostMessageBtn
+				currentUser={currentUser}
+				setUser={handleSetUser}
+				refreshMessages={fetchMessages}
+			/>
+		</div>
+	);
+}
 
 export default App;
