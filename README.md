@@ -13,6 +13,8 @@ Shui Message Board is a browser-based fullstack mini application that allows use
 - **DynamoDB** – NoSQL database for storing messages.
 - **API Gateway** – Manages API endpoints for backend interaction.
 - **Serverless Framework** – Deploys and manage backend services.
+## Frontend URL
+`http://shuiapp-frontend.s3-website.eu-north-1.amazonaws.com/`
 ## Base URL
 `https://4a1acwbxsa.execute-api.eu-north-1.amazonaws.com/`
 ## API Endpoints
